@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createInstance, HackleProvider } from "@hackler/react-sdk";
+import App from './App';
+
+const hackleClient = createInstance("4CcBnRoIwkxIos7TDZNneHzyeY4nwEw9")
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <HackleProvider hackleClient={hackleClient}>
+      <App />
+    </HackleProvider>,
   </React.StrictMode>
 );
 
